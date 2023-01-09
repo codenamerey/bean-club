@@ -6,7 +6,7 @@ html(lang="en" class="dark")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title= title
         link(rel="stylesheet", href="/stylesheets/style.css")
-    body(class=" bg-slate-300 text-black dark:bg-gray-900 dark:text-white transition duration-300") 
+    body(class=" bg-slate-300 text-black dark:bg-gray-900 dark:text-white transition duration-300 h-screen flex flex-col") 
         header.px-3.py-6.flex.justify-between.items-center 
             a(href="/" class="bg-rose-900 px-6 py-3 text-white").text-xl THE 
                 span(class=" text-orange-600" style="text-shadow: 1px 1px 0 black, -1px -1px 0 black").font-bold BEAN 
@@ -14,8 +14,17 @@ html(lang="en" class="dark")
             label(for="toggle-theme" class=" bg-white px-6 py-1 border-black border-solid border-2 rounded-full relative dark:bg-slate-900 w-10 h-8 shadow-inner shadow-yellow-900")
                 div(id="indicator" class=" top-0 left-0 h-full w-1/2 rounded-full bg-slate-900 absolute dark:bg-yellow-300 translate-x-full transition duration-300 shadow-inner shadow-slate-800 dark:shadow-yellow-900")
             input#toggle-theme(type="checkbox", name="toggle-theme" class="hidden")
-    
-        block content
+
+        main.flex-1
+            block content
+
+        footer 
+            nav 
+                ul.flex.gap-x-2.justify-center.items-center.px-6.py-3 
+                    li 
+                        a(href="/sign-up").px-6.py-3.rounded-full.bg-red-500.font-bold.shadow-lg Sign Up 
+                    li 
+                        a(href="/log-in").px-6.py-3.rounded-full.bg-green-500.font-bold.shadow-lg Log In                  
 
         script. 
             const toggleButton = document.querySelector('#toggle-theme');
