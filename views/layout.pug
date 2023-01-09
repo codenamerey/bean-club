@@ -7,10 +7,12 @@ html(lang="en" class="dark")
         title= title
         link(rel="stylesheet", href="/stylesheets/style.css")
     body(class=" bg-slate-100 text-black dark:bg-gray-900 dark:text-white transition duration-300") 
-        header.px-3.py-6 
-            a(href="/") THE BEAN CLUB
-            label(for="toggle-theme" class=" bg-white px-6 py-1 border-black border-solid border-2 rounded-full relative dark:bg-slate-900")
-                div(id="indicator" class=" top-0 left-0 h-full w-1/2 rounded-full bg-slate-900 absolute dark:bg-white translate-x-full transition duration-300")
+        header.px-3.py-6.flex.justify-between.items-center 
+            a(href="/" class="bg-rose-900 px-6 py-3 text-white").text-xl THE 
+                span(class=" text-orange-600" style="text-shadow: 1px 1px 0 black, -1px -1px 0 black").font-bold BEAN 
+                | CLUB
+            label(for="toggle-theme" class=" bg-white px-6 py-1 border-black border-solid border-2 rounded-full relative dark:bg-slate-900 w-10 h-8 shadow-inner shadow-yellow-900")
+                div(id="indicator" class=" top-0 left-0 h-full w-1/2 rounded-full bg-slate-900 absolute dark:bg-yellow-300 translate-x-full transition duration-300 shadow-inner shadow-slate-800 dark:shadow-yellow-900")
             input#toggle-theme(type="checkbox", name="toggle-theme" class="hidden")
     
         block content
