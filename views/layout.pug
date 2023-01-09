@@ -1,10 +1,31 @@
 doctype html
-html(lang="en")
+html(lang="en" class="dark")
     head
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title= title
-    body 
+        link(rel="stylesheet", href="/stylesheets/style.css")
+    body(class=" bg-slate-100 text-black dark:bg-gray-900 dark:text-white transition duration-300") 
+        header.px-3.py-6 
+            a(href="/") THE BEAN CLUB
+            label(for="toggle-theme" class=" bg-white px-6 py-1 border-black border-solid border-2 rounded-full relative dark:bg-slate-900")
+                div(id="indicator" class=" top-0 left-0 h-full w-1/2 rounded-full bg-slate-900 absolute dark:bg-white translate-x-full transition duration-300")
+            input#toggle-theme(type="checkbox", name="toggle-theme" class="hidden")
     
-    block content 
+        block content
+
+        script. 
+            const toggleButton = document.querySelector('#toggle-theme');
+            const darkIndicator = document.querySelector('#indicator');
+            toggleButton.addEventListener('click', (e) => {
+                if(e.target.checked) {
+                    document.documentElement.classList.remove('dark');
+                    indicator.style.transform = 'translateX(0)';
+                }
+
+                else {
+                    document.documentElement.classList.add('dark');
+                    indicator.style.transform = 'translateX(100%)';
+                }
+            })
