@@ -37,7 +37,7 @@ passport.use(
         clientSecret: process.env.clientSecret,
         callbackURL: '/auth/google/callback'
     }, (accessToken, refreshToken, profile, done) => {
-        User.findOne({email_address: profile.email_address}, (err, user) => {
+        User.findOne({email_address: profile.email}, (err, user) => {
             if(err) return done(err);
             if(user) return done(null, user);
             // If there is no user with that email_address, create one
