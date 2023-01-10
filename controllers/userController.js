@@ -1,11 +1,7 @@
 const passport = require('passport');
 
-exports.sign_up_get = (req, res, next) => {
-    res.render('sign-up-form', {title: "Sign Up Form"});
-}
-
-exports.log_in_get = (req, res, next) => {
-    res.render('log-in');
+exports.index = (req, res, next) => {
+    res.render('profile', {title: `Profile Info: ${req.user.name}`});
 }
 
 exports.log_in_post = passport.authenticate('google', {
@@ -13,6 +9,6 @@ exports.log_in_post = passport.authenticate('google', {
 });
 
 exports.google_callback = passport.authenticate('google', {
-    successRedirect: '/',
+    successRedirect: '/user',
     failureRedirect: '/log-in'
 });
