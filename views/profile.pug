@@ -1,0 +1,17 @@
+extends layout 
+
+block content
+
+    section.flex.flex-col.items-center.justify-center.grow.gap-y-2 
+        h1.text-2xl Profile Info 
+        article.flex.flex-col.gap-y-2.items-center
+            p.flex.items-center.gap-x-2 
+                img(src=currentUser.display_picture, alt=currentUser.name).w-10.aspect-square.rounded-full 
+                | #{currentUser.name}
+            p Email Address: 
+                a(href=`mailto:${currentUser.email_address}`).underline #{currentUser.email_address}
+            p First Name: #{currentUser.first_name}
+            p Last Name: #{currentUser.last_name}
+            p Display Name: #{currentUser.display_name}
+            
+        
