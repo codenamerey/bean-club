@@ -9,6 +9,7 @@ const dotenv = require('dotenv').config();
 
 // Routes
 const indexRouter = require('./routes/index');
+const userRouter = require('./routes/userRouter');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -40,5 +41,6 @@ app.use(passport.session());
 
 
 app.use('/', indexRouter);
+app.use('/', userRouter);
 
 app.listen(3000);
