@@ -12,3 +12,10 @@ exports.google_callback = passport.authenticate('google', {
     successRedirect: '/user',
     failureRedirect: '/log-in'
 });
+
+exports.logout = (req, res, next) => {
+    req.logout((err) => {
+        if(err) return next(err);
+        res.redirect('/');
+    })
+}
