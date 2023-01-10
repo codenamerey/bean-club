@@ -1,0 +1,10 @@
+extends layout 
+
+block content 
+
+    h1.font-bold.text-2xl.text-center One more step and you're in
+    form(action="", method="post").flex.flex-col.items-center.justify-center.grow.gap-y-2 
+        label(for="display-name") Pick A Display Name: 
+        input#display-name(type="text", name="display_name" class=" dark:bg-slate-100 dark:text-black").rounded.py-3.text-center.text-white.outline-none.bg-slate-900
+
+        input(type="submit", value="Sign Up" class=" bg-emerald-600").px-6.py-3.rounded-full
