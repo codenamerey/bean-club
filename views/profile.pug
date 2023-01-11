@@ -12,6 +12,8 @@ block content
                 a(href=`mailto:${currentUser.email_address}`).underline #{currentUser.email_address}
             p First Name: #{currentUser.first_name}
             p Last Name: #{currentUser.last_name}
-            p Display Name: #{currentUser.display_name}
+            p.flex.gap-x-2 Display Name: #{currentUser.display_name}
+                a(href="/user/dn/edit" class="text-amber-900 dark:text-amber-500 font-bold underline") Edit
+            p Date of initiation: #{currentUser.joined_date.toLocaleDateString()}
             
         
