@@ -16,8 +16,9 @@ exports.index = (req, res, next) => {
 
         posts(callback) {
             Post.find({})
-                .sort({creation_date: -1}).
-                exec((err, posts) => {
+                .sort({creation_date: -1})
+                .populate('author')
+                .exec((err, posts) => {
                     if(err) return callback(err, null);
 
                     callback(null, posts);
