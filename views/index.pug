@@ -2,5 +2,10 @@ extends layout
 
 block content 
 
-    main 
-        h1 Initial HTML
+    main.flex.flex-col.items-center 
+        aside(style="background: url('/images/scroll.png'); background-size: contain; background-position: center; background-repeat: no-repeat;" class="h-80 overflow-hidden")
+            ul.p-8.text-black.pt-16.pb-4.text-center(aria-label="Devotees to the Bean" class="before:content-[attr(aria-label)] before:font-bold") 
+                
+                each user in users 
+                    li= user.display_name
+            
