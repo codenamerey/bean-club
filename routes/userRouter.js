@@ -13,6 +13,8 @@ router.get('/user', userController.index);
 
 router.get('/user/dn/edit', userController.display_name_edit_get);
 
+router.post('/user/dn/edit', userController.display_name_edit_post);
+
 router.get('/logout', userController.logout);
 
 module.exports = router;
