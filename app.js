@@ -10,6 +10,7 @@ const dotenv = require('dotenv').config();
 // Routes
 const indexRouter = require('./routes/index');
 const userRouter = require('./routes/userRouter');
+const postRouter = require('./routes/postRouter');
 
 // Models
 const User = require('./models/user');
@@ -83,5 +84,6 @@ app.use(function(req, res, next) {
 
 app.use('/', userRouter);
 app.use('/', indexRouter);
+app.use('/post', postRouter);
 
 app.listen(3000);
