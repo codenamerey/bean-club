@@ -26,6 +26,12 @@ exports.post_create_post = [
         if(!errors.isEmpty()) {
             // There are errors, re-render post page.
             res.render('post-create-form', { title: 'Create Post', post, errors: errors.array() });
+        } else {
+            post.save((err) => {
+                if(err) return next(err);
+
+                res.redirect('/');
+            })
         }
     }
 
