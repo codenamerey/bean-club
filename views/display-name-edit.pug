@@ -5,7 +5,14 @@ block content
 
     form(action="", method="post").flex.flex-col.items-center.justify-center.grow.gap-y-2 
         label(for="display-name") Display Name: 
-        input#display-name(type="text", name="display_name" value=currentUser.display_name class=" text-black text-center outline-none py-2 rounded")
+        input#display-name(type="text", name="display_name" value=currentUser.display_name class=" bg-slate-900 text-white dark:text-black dark:bg-slate-100 text-center outline-none py-2 rounded")
         input(type="submit", value="Update" class=" bg-sky-600 px-6 py-3 rounded-full font-bold")
+
+        if(errors)
+            h3.text-red-500 Errors:
+            ul.text-center
+                each error in errors 
+                    li= error.msg
+
 
         p(class=" text-gray-900 dark:text-gray-500 italic").text-sm Your display name will be shown to members of the bean club
