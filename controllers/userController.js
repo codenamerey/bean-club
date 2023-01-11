@@ -1,6 +1,14 @@
 const passport = require('passport');
 const User = require('../models/user');
 
+exports.logged_in = (req, res, next) => {
+    if(req.user) {
+        next();
+    } else {
+        res.redirect('/');
+    }
+}
+
 exports.index = (req, res, next) => {
     res.render('profile', {title: `Profile Info: ${req.user.name}`});
 }

@@ -9,12 +9,12 @@ router.get('/log-in', userController.log_in_post);
 
 router.get('/auth/google/callback', userController.google_callback);
 
-router.get('/user', userController.index);
+router.get('/user', userController.logged_in, userController.index);
 
-router.get('/user/dn/edit', userController.display_name_edit_get);
+router.get('/user/dn/edit', userController.logged_in, userController.display_name_edit_get);
 
-router.post('/user/dn/edit', userController.display_name_edit_post);
+router.post('/user/dn/edit', userController.logged_in, userController.display_name_edit_post);
 
-router.get('/logout', userController.logout);
+router.get('/logout', userController.logged_in, userController.logout);
 
 module.exports = router;
