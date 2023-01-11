@@ -11,6 +11,8 @@ router.get('/auth/google/callback', userController.google_callback);
 
 router.get('/user', userController.index);
 
+router.get('/user/dn/edit', userController.display_name_edit_get);
+
 router.get('/logout', userController.logout);
 
 module.exports = router;
