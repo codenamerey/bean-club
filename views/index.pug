@@ -15,7 +15,7 @@ block content
                     h1.text-2xl.font-bold.text-orange-500.text-center(style="text-shadow: 1px 1px 0 white")= post.title
                     p.text-justify.my-auto= post.content
                     if(currentUser)
-                        p(class=" italic text-gray-300")= post.author.display_name
+                        p(class=" italic text-gray-300") #{post.author.display_name} | #{post.creation_date.toLocaleDateString()} 
             if(currentUser)
                 a(href="/post/create").px-6.py-3.rounded-full.bg-sky-500.font-bold.shadow-lg Create Post + 
             
