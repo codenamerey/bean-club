@@ -2,6 +2,7 @@ const User = require('../models/user');
 const Post = require('../models/post');
 
 const async = require('async');
+const decode = require('unescape');
 
 exports.index = (req, res, next) => {
 
@@ -20,7 +21,9 @@ exports.index = (req, res, next) => {
                 .populate('author')
                 .exec((err, posts) => {
                     if(err) return callback(err, null);
-
+                    posts.forEach((post) => {
+                        post.content = decode(post.content);
+                    }) 
                     callback(null, posts);
                 })
         }
