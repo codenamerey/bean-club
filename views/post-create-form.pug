@@ -2,4 +2,14 @@ extends layout
 
 block content 
 
-    h1= title 
+    h1.text-center.text-2xl= title 
+
+    form(action="", method="post").flex.flex-col.items-center.grow.justify-center.gap-y-2 
+
+        label(for="title") Title: 
+        input#title(type="text", name="title" class="bg-slate-900 text-white dark:bg-slate-100 dark:text-black text-center").px-4.py-2.outline-none
+
+        label(for="content") Post: 
+        textarea#content(name="content", cols="50", rows="10" class="bg-slate-900 text-white dark:bg-slate-100 dark:text-black").px-4.py-2.outline-none 
+
+        input(type="submit", value="Post").bg-sky-600.px-6.py-3.rounded-full.font-bold
