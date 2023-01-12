@@ -10,7 +10,7 @@ block content
         input#title(type="text", name="title" class="bg-slate-900 text-white dark:bg-slate-100 dark:text-black text-center" value=(undefined===post ? '' : post.title)).px-4.py-2.outline-none
 
         label(for="content") Post: 
-        textarea#content(name="content", cols="50", rows="10" class="bg-slate-900 text-white dark:bg-slate-100 dark:text-black").px-4.py-2.outline-none= (undefined===post) ? '' : post.content
+        textarea#content(name="content", rows="10" class="w-4/5 md:w-1/2 md:px-4 md:py-2 bg-slate-900 text-white dark:bg-slate-100 dark:text-black").outline-none= (undefined===post) ? '' : post.content
 
         if(errors)
             ul 
